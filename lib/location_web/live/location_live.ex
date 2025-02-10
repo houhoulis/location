@@ -23,21 +23,6 @@ defmodule LocationWeb.LocationLive do
       Hello lat {@lat} and long {@long} with accuracy {@accuracy}!
     </p>
 
-    <p>
-      width="100%"
-      height="300px"
-      frameborder="0"
-      allowfullscreen
-      allow="geolocation"
-      src="//umap.openstreetmap.fr/en/map/new/?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=&editinosmControl=true&captionControl=true#18/46.40502/23.93210"
-      >
-    </p>
-    <p>
-      <a href="//umap.openstreetmap.fr/en/map/new/?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=false&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true&datalayers=&editinosmControl=true&captionControl=true#18/46.40502/23.93210">
-        See full screen on uMap
-      </a>
-    </p>
-
     <div :if={!@ready}>
       <p>
         Loading current position....
