@@ -1,5 +1,5 @@
-// import ExampleHook from "./hooks/example-hook";
+import Location from "./hooks/location";
 
 export default Hooks = {
-  // ExampleHook
+  Location
 }

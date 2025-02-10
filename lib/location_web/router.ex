@@ -18,6 +18,8 @@ defmodule LocationWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/location", LocationLive
   end
 
   # Other scopes may use custom stacks.
