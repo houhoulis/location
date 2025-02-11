@@ -20,6 +20,7 @@ defmodule LocationWeb.Router do
     get "/", PageController, :home
 
     live "/location", LocationLive
+    live "/hello", HelloLive
   end
 
   # Other scopes may use custom stacks.
