@@ -12,7 +12,7 @@ defmodule LocationWeb.LocationLive do
        lower: -0.0005,
        right: 0.0009,
        upper: 0.0005,
-       accuracy: 0,
+       accuracy: 0.0,
        ready: false
      )}
   end

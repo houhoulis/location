@@ -6,8 +6,7 @@ export default Location = {
 
     const options = {
       enableHighAccuracy: true,
-      // timeout: 5000,
-      maxAge: 0
+      maxAge: 5000 // client can return a cached position for up to 5 seconds before attempting to retrieve the real current position
     }
 
     navigator.geolocation.watchPosition(success, error, options);
