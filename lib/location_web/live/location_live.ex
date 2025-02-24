@@ -3,6 +3,8 @@ defmodule LocationWeb.LocationLive do
 
   require Logger
 
+  @map_token Application.compile_env!(:location, :map_token)
+
   def mount(_params, _session, socket) do
     {:ok,
      assign(socket,
@@ -13,7 +15,8 @@ defmodule LocationWeb.LocationLive do
        right: 0.0009,
        upper: 0.0005,
        accuracy: 0.0,
-       ready: false
+       ready: false,
+       token: @map_token
      )}
   end
 
@@ -30,19 +33,10 @@ defmodule LocationWeb.LocationLive do
     </div>
 
     <div :if={@ready}>
-      <iframe
-        width="425"
-        height="350"
-        src={"https://www.openstreetmap.org/export/embed.html?bbox=#{@left}%2C#{@lower}%2C#{@right}%2C#{@upper}&layer=mapnik&marker=#{@lat}%2C#{@long}"}
-        style="border: 1px solid black"
-      >
-      </iframe>
-      <br />
-      <small>
-        <a href={"https://www.openstreetmap.org/?mlat=#{@lat}&mlon=#{@long}#map=19/#{@lat}/#{@long}"}>
-          View Larger Map on OpenStreetMap
-        </a>
-      </small>
+      <img
+        id="mapbox"
+        src={"https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/geojson(%7B%22type%22%3A%22Point%22%2C%22coordinates%22%3A%5B#{@long}%2C#{@lat}%5D%7D)/#{@long},#{@lat},16.33/400x400?access_token=#{@token}"}
+      />
     </div>
     """
   end
