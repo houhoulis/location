@@ -12,3 +12,5 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
+
+config :location, :map_token, System.fetch_env!("YOUR_MAPBOX_ACCESS_TOKEN")

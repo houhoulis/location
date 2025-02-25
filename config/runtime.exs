@@ -81,4 +81,5 @@ if config_env() == :prod do
   #       force_ssl: [hsts: true]
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
+  config :location, :map_token, System.fetch_env!("YOUR_MAPBOX_ACCESS_TOKEN")
 end
