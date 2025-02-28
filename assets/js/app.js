@@ -17,7 +17,7 @@
 
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
 import "phoenix_html"
-import Hooks from "./hooks";
+import Location from "./hooks/location";
 
 // Establish Phoenix Socket and LiveView configuration.
 import {Socket} from "phoenix"
@@ -28,7 +28,7 @@ let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
   params: {_csrf_token: csrfToken},
-  hooks: Hooks
+  hooks: { Location }
 })
 
 // Show progress bar on live navigation and form submits
